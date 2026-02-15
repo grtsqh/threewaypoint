@@ -64,30 +64,7 @@ function removeProjectSpecificEffect(item) {
 // Smooth scroll behavior
 document.documentElement.style.scrollBehavior = 'smooth';
 
-// Add typing effect to project titles on load
-window.addEventListener('load', () => {
-    projectItems.forEach((item, index) => {
-        const title = item.querySelector('.project-title');
-        const text = title.textContent;
-        title.textContent = '';
-        
-        setTimeout(() => {
-            typeText(title, text, 50);
-        }, index * 100);
-    });
-});
-
-function typeText(element, text, speed) {
-    let i = 0;
-    const timer = setInterval(() => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-        } else {
-            clearInterval(timer);
-        }
-    }, speed);
-}
+// Removed typing effect as requested
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
