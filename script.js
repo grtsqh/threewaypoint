@@ -19,25 +19,52 @@ projectItems.forEach(item => {
 // Project-specific visual effects
 function addProjectSpecificEffect(item, projectType) {
     const visual = item.querySelector('.project-visual');
+    const img = visual.querySelector('img, video');
     
-    switch(projectType) {
-        case 'fashion-x':
-            visual.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4)';
-            break;
-        case 'streetwear':
-            visual.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
-            break;
-        case 'avant-garde':
-            visual.style.background = 'linear-gradient(45deg, #f093fb, #f5576c)';
-            break;
-        case 'luxury':
-            visual.style.background = 'linear-gradient(45deg, #ffecd2, #fcb69f)';
-            break;
-        case 'experimental':
-            visual.style.background = 'linear-gradient(45deg, #a8edea, #fed6e3)';
-            break;
-        default:
-            visual.style.background = '#ffffff';
+    if (!img) {
+        switch(projectType) {
+            case 'seventeen-nanatour':
+                visual.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4)';
+                break;
+            case 'ader-bno':
+                visual.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+                break;
+            case 'blackyak':
+                visual.style.background = 'linear-gradient(45deg, #2d3748, #4a5568)';
+                break;
+            case 'le-sserafim':
+                visual.style.background = 'linear-gradient(45deg, #f093fb, #f5576c)';
+                break;
+            case 'tongue-samsung':
+                visual.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+                break;
+            case 'we11done-central':
+                visual.style.background = 'linear-gradient(45deg, #ffecd2, #fcb69f)';
+                break;
+            case 'ader-converse':
+                visual.style.background = 'linear-gradient(45deg, #a8edea, #fed6e3)';
+                break;
+            case 'ader-meta':
+                visual.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+                break;
+            case 'elle-beauty':
+                visual.style.background = 'linear-gradient(45deg, #ff6b6b, #feca57)';
+                break;
+            case 'puma':
+                visual.style.background = 'linear-gradient(45deg, #2d3748, #4a5568)';
+                break;
+            case 'zara':
+                visual.style.background = 'linear-gradient(45deg, #ffecd2, #fcb69f)';
+                break;
+            case 'kitsune':
+                visual.style.background = 'linear-gradient(45deg, #a8edea, #fed6e3)';
+                break;
+            case 'tongue-2021':
+                visual.style.background = 'linear-gradient(45deg, #f093fb, #f5576c)';
+                break;
+            default:
+                visual.style.background = '#f5f5f5';
+        }
     }
     
     // Add subtle animation to the visual
@@ -47,8 +74,13 @@ function addProjectSpecificEffect(item, projectType) {
 
 function removeProjectSpecificEffect(item) {
     const visual = item.querySelector('.project-visual');
+    const img = visual.querySelector('img, video');
+    
     visual.style.transform = 'scale(1)';
-    visual.style.background = '#ffffff';
+    
+    if (!img) {
+        visual.style.background = '#f5f5f5';
+    }
 }
 
 // Smooth scroll behavior
