@@ -15,29 +15,12 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--white);
     color: var(--black);
-    cursor: none;
+    cursor: auto;
     overflow-x: hidden;
     font-weight: 300;
 }
 
-/* Custom Cursor */
-.cursor {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background-color: var(--black);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
-    mix-blend-mode: difference;
-}
-
-.cursor.hover {
-    transform: scale(3);
-    background-color: transparent;
-    border: 1px solid var(--black);
-}
+/* Custom cursor removed */
 
 /* Main Container */
 .container {
@@ -73,7 +56,6 @@ body {
 
 .project-item:hover .project-title {
     color: var(--gray);
-    transform: translateX(-100px);
 }
 
 /* Project Details */
@@ -174,7 +156,7 @@ body {
     }
     
     .project-item:hover .project-title {
-        transform: none;
+        color: var(--gray);
     }
     
     .project-details {
