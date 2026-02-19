@@ -1,27 +1,17 @@
-// Custom cursor
-const cursor = document.querySelector('.cursor');
+// Custom cursor removed
 const projectItems = document.querySelectorAll('.project-item');
-
-// Track mouse movement
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
 
 // Project hover effects
 projectItems.forEach(item => {
     const title = item.querySelector('.project-title');
     
     item.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        
         // Add individual project-specific effects
         const projectType = item.dataset.project;
         addProjectSpecificEffect(item, projectType);
     });
     
     item.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
         removeProjectSpecificEffect(item);
     });
 });
